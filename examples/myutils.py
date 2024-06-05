@@ -29,11 +29,7 @@ def max_days(month:int, year: int) -> int:
 
 
 def dir2(obj: any) -> list:
-    attrs = []
-    for each_attr in dir(obj):
-        if not each_attr.startswith('_'):
-            attrs.append(each_attr)
-    return attrs
+    return [each_attr for each_attr in dir(obj) if not each_attr.startswith('_')]
 
 # print(f'inside myutils.py, value of __name__ is {__name__}')
 
@@ -47,3 +43,6 @@ if __name__ == '__main__':
     days = max_days(m, y)
     print(f'Maximum days in month {m} of year {y} is {days}.')
 
+
+def line(char='-', length=80):
+    print(char*length)
